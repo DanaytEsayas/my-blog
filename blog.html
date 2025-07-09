@@ -3,100 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My journey into coding– Blog Article</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-
-    .title-section h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-    }
-
-    .blog-image {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .author-box {
-      display: flex;
-      align-items: center;
-      margin: 20px 0;
-      padding: 10px;
-      background: #eef0f1;
-      border-left: 5px solid #007acc;
-      border-radius: 5px;
-    }
-
-    .author-box img {
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      margin-right: 15px;
-    }
-
-    .author-info {
-      font-size: 0.9em;
-    }
-
-    .author-info h4 {
-      margin: 0 0 5px 0;
-    }
-
-    .content {
-      margin: 20px 0;
-    }
-
-    .comment-section {
-      margin-top: 40px;
-    }
-
-    .comment-section h3 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 5px;
-    }
-
-    .comment-form input,
-    .comment-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .comment-form button {
-      padding: 10px 20px;
-      background: #007acc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .comment-form button:hover {
-      background: #005fa3;
-    }
-  </style>
-</head>
-<body>
+  <title>My Journey into Coding – Blog Article</title>
+  <link rel="stylesheet" href = "style.css">
+</head><body>
 
   <div class="container">
     <div class="title-section">
@@ -113,22 +22,66 @@
     </div>
 
     <div class="content">
-      <p>
-        From the quiet tap of the keyboard in the early morning to the final Git push at night, a developer's day is filled with problem-solving, creativity, and lots of coffee. This blog takes you through a day filled with code, challenges, and moments of clarity...
-      </p>
-      <!-- You can expand content here -->
-    </div>
+  <p>
+    From the quiet tap of the keyboard in the early morning to the final Git push at night, a developer's day is filled with problem-solving, creativity, and lots of coffee. Each day begins with a plan — but as any developer knows, the plan often changes once the first bug appears.
+  </p>
+  <p>
+    Mornings are usually spent reviewing tasks, writing clean code, and checking for any overnight updates on version control. Breaks are brief but essential — whether it's for a coffee refill or a quick stretch to avoid becoming one with the chair.
+  </p>
+  <p>
+    By afternoon, the real magic begins. Whether it's designing a user interface, optimizing a database query, or tracking down a mysterious error that only appears in production, there’s always something new to learn. Stack Overflow becomes a trusted companion, and rubber duck debugging often works wonders.
+  </p>
+  <p>
+    As the day winds down, there’s satisfaction in closing tasks, pushing final commits, and seeing your work take shape. It's a mix of logic, patience, and creativity — a constant cycle of building, breaking, and learning.
+  </p>
+  <div class="more-posts">
+  <h3>More Blog Posts</h3>
+  <div id="postList">
+    <p>Loading more posts...</p>
+  </div>
+</div>
 
     <div class="comment-section">
       <h3>Leave a Comment</h3>
-      <form class="comment-form">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="comment" rows="5" placeholder="Write your comment here..." required></textarea>
+      <form class="comment-form" id="commentForm">
+        <input type="text" id="name" placeholder="Your name" required />
+        <input type="email" id="email" placeholder="Your email" required />
+        <textarea id="comment" rows="5" placeholder="Write your comment here..." required></textarea>
         <button type="submit">Post Comment</button>
       </form>
+
+      <div class="comments-display" id="commentsDisplay">
+        <!-- Comments will appear here -->
+      </div>
     </div>
-  </div>
+  </div><script src="script.js"></script>
+
+
+<!-- <script>
+    const form = document.getElementById('commentForm');
+    const commentsDisplay = document.getElementById('commentsDisplay');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const comment = document.getElementById('comment').value.trim();
+        console.log("name: ", name)
+      if (name && email && comment) {
+        const commentBox = document.createElement('div');
+        commentBox.classList.add('comment');
+        commentBox.innerHTML = `
+          <strong>${name}</strong>
+          <small>${email}</small>
+          <p>${comment}</p>
+        `;
+
+        commentsDisplay.prepend(commentBox); 
+        form.reset();
+      }
+    });
+</script>  -->
 
 </body>
 </html>
